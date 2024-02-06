@@ -1,16 +1,3 @@
 {
-  "posts": [
-    {
-      "id": "493e",
-      "name": "mk",
-      "sal": "5000000",
-      "company": "xyz"
-    },
-    {
-      "id": "fcd4",
-      "name": "rk",
-      "sal": "50000",
-      "company": "xyz"
-    }
-  ]
+  "posts": []
 }

@@ -10,6 +10,14 @@ const Users = () => {
         .then((res)=>{setContent(res.data)})
         .catch(()=>{console.log("error bro!");})
     },[])
+
+    let deleteItem=(comingId)=>{
+        axios.delete(`http://localhost:4000/posts/${comingId}`)
+        const filterData=content.filter((e)=>{
+            return e.id !==comingId
+        })
+        setContent(filterData);
+    }
   return (
     <div className={style.container}>
         {content.map((dataBro)=>{
@@ -30,10 +38,10 @@ const Users = () => {
                         </tr>
                         <tr>
                             <td>
-                                <button><Link to='/edit-users'>Edit</Link></button>
+                                <button><Link to={`/edit-users/${dataBro.id}`}>Edit</Link></button>
                                 </td>
                             <td>
-                                <button>Submit</button>
+                                <button onClick={()=>deleteItem(dataBro.id)}>Delete</button>
                                 </td>
                         </tr>
                     </table>
